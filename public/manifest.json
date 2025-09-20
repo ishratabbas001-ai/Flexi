@@ -1,0 +1,154 @@
+{
+  "name": "FlexiFee - Financing your Education",
+  "short_name": "FlexiFee",
+  "description": "Flexibile solution for school fee payments - making education accessible through flexible financing",
+  "theme_color": "#074e8e",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "display_override": ["fullscreen", "standalone"],
+  "orientation": "portrait-primary",
+  "scope": "https://lms1-duplicated-dvc5.bolt.host/",
+"start_url": "https://lms1-duplicated-dvc5.bolt.host/",
+  "lang": "en",
+  "dir": "ltr",
+  "categories": ["finance", "education", "productivity"],
+  "prefer_related_applications": false,
+  "edge_side_panel": {
+    "preferred_width": 400
+  },
+  "launch_handler": {
+    "client_mode": "navigate-existing"
+  },
+  "icons": [
+    {
+      "src": "https://ik.imagekit.io/athcdn/icon-72x72.png",
+      "sizes": "72x72",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "https://ik.imagekit.io/athcdn/icon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "https://ik.imagekit.io/athcdn/icon-128x128.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "https://ik.imagekit.io/athcdn/icon-144x144.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "https://ik.imagekit.io/athcdn/icon-512x512.png",
+      "sizes": "152x152",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "https://ik.imagekit.io/athcdn/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "https://ik.imagekit.io/athcdn/icon-384x384.png",
+      "sizes": "384x384",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "https://ik.imagekit.io/athcdn/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "https://ik.imagekit.io/athcdn/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "https://ik.imagekit.io/athcdn/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Dashboard",
+      "short_name": "Dashboard",
+      "description": "Go to main dashboard",
+      "url": "/",
+      "icons": [
+        {
+          "src": "https://ik.imagekit.io/athcdn/icon-192x192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Apply BNPL",
+      "short_name": "Apply",
+      "description": "Apply for Buy Now Pay Later",
+      "url": "/bnpl/apply",
+      "icons": [
+        {
+          "src": "https://ik.imagekit.io/athcdn/icon-192x192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Make Payment",
+      "short_name": "Pay",
+      "description": "Make a payment",
+      "url": "/parent/payments",
+      "icons": [
+        {
+          "src": "https://ik.imagekit.io/athcdn/icon-192x192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Students",
+      "short_name": "Students",
+      "description": "Manage students",
+      "url": "/students",
+      "icons": [
+        {
+          "src": "https://ik.imagekit.io/athcdn/icon-192x192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "https://ik.imagekit.io/athcdn/dashboard.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "FlexiFee Dashboard"
+    },
+    {
+      "src": "https://ik.imagekit.io/athcdn/mobile.png",
+      "sizes": "750x1334",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "FlexiFee Mobile View"
+    }
+  ]
+}

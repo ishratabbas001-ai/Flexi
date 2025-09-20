@@ -1,0 +1,87 @@
+ <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#074e8e" />
+    <meta name="background-color" content="#ffffff" />
+    <meta name="description" content="FlexiFee - Financing your Education. Buy Now Pay Later solution for school fee payments making education accessible through flexible financing." />
+    <meta name="keywords" content="education, finance, school fees, BNPL, payment plans" />
+    <meta name="author" content="FlexiFee" />
+    
+    <!-- PWA Meta Tags -->
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="FlexiFee - Financing your Education" />
+    <meta name="application-name" content="FlexiFee" />
+    <meta name="msapplication-TileColor" content="#074e8e" />
+    <meta name="msapplication-config" content="/browserconfig.xml" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+    
+    <!-- Manifest -->
+    <link rel="manifest" href="/manifest.json" />
+    
+    <!-- Icons -->
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/vite.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/vite.svg" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/vite.svg" />
+    <link rel="mask-icon" href="/vite.svg" color="#074e8e" />
+    
+    <title>FlexiFee - Financing your Education</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+    
+    <!-- PWA Installation Script -->
+    <script>
+      // Register service worker
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js')
+            .then((registration) => {
+              console.log('SW registered: ', registration);
+              
+              // Handle service worker updates
+              registration.addEventListener('updatefound', () => {
+                const newWorker = registration.installing;
+                if (newWorker) {
+                  newWorker.addEventListener('statechange', () => {
+                    if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                      // New service worker is available
+                      console.log('New service worker available');
+                    }
+                  });
+                }
+              });
+            })
+            .catch((registrationError) => {
+              console.log('SW registration failed: ', registrationError);
+            });
+        });
+      }
+      
+      // Handle theme color based on system preference
+      const updateThemeColor = () => {
+        const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const themeColor = isDark ? '#1f2937' : '#074e8e';
+        document.querySelector('meta[name="theme-color"]').setAttribute('content', themeColor);
+      };
+      
+      updateThemeColor();
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', updateThemeColor);
+      
+      // Debug PWA installation
+      window.addEventListener('beforeinstallprompt', (e) => {
+        console.log('beforeinstallprompt event fired');
+      });
+      
+      window.addEventListener('appinstalled', (e) => {
+        console.log('App was installed');
+      });
+    </script>
+  </body>
+</html>
