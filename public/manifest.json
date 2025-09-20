@@ -1,14 +1,14 @@
 {
   "name": "FlexiFee - Financing your Education",
   "short_name": "FlexiFee",
-  "description": "Flexibile solution for school fee payments - making education accessible through flexible financing",
+  "description": "Flexible solution for school fee payments - making education accessible through flexible financing",
   "theme_color": "#074e8e",
   "background_color": "#ffffff",
   "display": "standalone",
   "display_override": ["fullscreen", "standalone"],
   "orientation": "portrait-primary",
-  "scope": "https://lms1-duplicated-dvc5.bolt.host/",
-"start_url": "https://lms1-duplicated-dvc5.bolt.host/",
+  "scope": "/",
+  "start_url": "/",
   "lang": "en",
   "dir": "ltr",
   "categories": ["finance", "education", "productivity"],
@@ -45,7 +45,7 @@
       "purpose": "any"
     },
     {
-      "src": "https://ik.imagekit.io/athcdn/icon-512x512.png",
+      "src": "https://ik.imagekit.io/athcdn/icon-152x152.png",
       "sizes": "152x152",
       "type": "image/png",
       "purpose": "any"
