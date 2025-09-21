@@ -104,29 +104,29 @@ const SchoolSettings = () => {
   };
 
   return (
-    <div className="space-y-6">
-      <div className="flex items-center justify-between">
-        <div>
-          <h1 className="text-3xl font-bold">School Settings</h1>
+    <div className="space-y-6 px-4 sm:px-6 max-w-[100vw] overflow-hidden">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+        <div className="w-full">
+          <h1 className="text-2xl sm:text-3xl font-bold">School Settings</h1>
           <p className="text-muted-foreground">
             Configure your school preferences and BNPL settings
           </p>
         </div>
-        <div className="flex space-x-2">
-          <Button variant="outline" onClick={handleReset}>
+        <div className="flex flex-col sm:flex-row w-full sm:w-auto gap-2 sm:space-x-2">
+          <Button variant="outline" onClick={handleReset} className="w-full sm:w-auto whitespace-nowrap">
             <RefreshCw className="mr-2 h-4 w-4" />
             Reset to Defaults
           </Button>
-          <Button onClick={handleSave} disabled={loading}>
+          <Button onClick={handleSave} disabled={loading} className="w-full sm:w-auto whitespace-nowrap">
             <Save className="mr-2 h-4 w-4" />
             {loading ? 'Saving...' : 'Save Changes'}
           </Button>
         </div>
       </div>
 
-      <div className="grid gap-6">
+      <div className="grid gap-6 w-full">
         {/* School Information */}
-        <Card>
+        <Card className="w-full">
           <CardHeader>
             <CardTitle className="flex items-center">
               <School className="mr-2 h-5 w-5" />
@@ -136,9 +136,9 @@ const SchoolSettings = () => {
               Basic information about your school
             </CardDescription>
           </CardHeader>
-          <CardContent className="space-y-4">
-            <div className="grid md:grid-cols-2 gap-4">
-              <div className="space-y-2">
+          <CardContent className="space-y-4 w-full">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="space-y-2 w-full">
                 <Label htmlFor="schoolName">School Name</Label>
                 <Input
                   id="schoolName"
@@ -156,8 +156,8 @@ const SchoolSettings = () => {
               </div>
             </div>
             
-            <div className="grid md:grid-cols-2 gap-4">
-              <div className="space-y-2">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="space-y-2 w-full">
                 <Label htmlFor="email">Email Address</Label>
                 <Input
                   id="email"
@@ -219,17 +219,23 @@ const SchoolSettings = () => {
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">
-            <div className="flex items-center justify-between">
+            <div className="flex items-start justify-between p-3 rounded-lg hover:bg-muted/50 transition-colors">
               <div className="space-y-0.5">
-                <Label>Enable BNPL</Label>
+                <Label className="text-base font-medium">Enable BNPL</Label>
                 <p className="text-sm text-muted-foreground">
                   Allow parents to apply for Buy Now Pay Later plans
                 </p>
               </div>
-              <Switch
-                checked={settings.enableBNPL}
-                onCheckedChange={(checked) => updateSetting('enableBNPL', checked)}
-              />
+              <div className="flex flex-col items-end gap-1">
+                <Switch
+                  checked={settings.enableBNPL}
+                  onCheckedChange={(checked) => updateSetting('enableBNPL', checked)}
+                  className="h-1 w-15 data-[state=checked]:bg-[#074e8e] dark:data-[state=checked]:bg-primary data-[state=unchecked]:bg-muted"
+                />
+                <span className="text-xs font-medium text-[#0d1026] dark:text-muted-foreground">
+                  {settings.enableBNPL ? 'Enabled' : 'Disabled'}
+                </span>
+              </div>
             </div>
             
             <Separator />
@@ -287,47 +293,65 @@ const SchoolSettings = () => {
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">
-            <div className="flex items-center justify-between">
+            <div className="flex items-start justify-between p-3 rounded-lg hover:bg-muted/50 transition-colors">
               <div className="space-y-0.5">
-                <Label>Email Notifications</Label>
+                <Label className="text-base font-medium">Email Notifications</Label>
                 <p className="text-sm text-muted-foreground">
                   Receive notifications via email
                 </p>
               </div>
-              <Switch
-                checked={settings.emailNotifications}
-                onCheckedChange={(checked) => updateSetting('emailNotifications', checked)}
-              />
+              <div className="flex flex-col items-end gap-1">
+                <Switch
+                  checked={settings.emailNotifications}
+                  onCheckedChange={(checked) => updateSetting('emailNotifications', checked)}
+                  className="h-1 w-15 data-[state=checked]:bg-[#074e8e] dark:data-[state=checked]:bg-primary data-[state=unchecked]:bg-muted"
+                />
+                <span className="text-xs font-medium text-[#0d1026] dark:text-muted-foreground">
+                  {settings.emailNotifications ? 'Enabled' : 'Disabled'}
+                </span>
+              </div>
             </div>
             
             <Separator />
             
-            <div className="flex items-center justify-between">
+            <div className="flex items-start justify-between p-3 rounded-lg hover:bg-muted/50 transition-colors">
               <div className="space-y-0.5">
-                <Label>SMS Notifications</Label>
+                <Label className="text-base font-medium">SMS Notifications</Label>
                 <p className="text-sm text-muted-foreground">
                   Receive notifications via SMS
                 </p>
               </div>
-              <Switch
-                checked={settings.smsNotifications}
-                onCheckedChange={(checked) => updateSetting('smsNotifications', checked)}
-              />
+              <div className="flex flex-col items-end gap-1">
+                <Switch
+                  checked={settings.smsNotifications}
+                  onCheckedChange={(checked) => updateSetting('smsNotifications', checked)}
+                  className="h-1 w-15 data-[state=checked]:bg-[#074e8e] dark:data-[state=checked]:bg-primary data-[state=unchecked]:bg-muted"
+                />
+                <span className="text-xs font-medium text-[#0d1026] dark:text-muted-foreground">
+                  {settings.smsNotifications ? 'Enabled' : 'Disabled'}
+                </span>
+              </div>
             </div>
             
             <Separator />
             
-            <div className="flex items-center justify-between">
+            <div className="flex items-start justify-between p-3 rounded-lg hover:bg-muted/50 transition-colors">
               <div className="space-y-0.5">
-                <Label>Payment Reminders</Label>
+                <Label className="text-base font-medium">Payment Reminders</Label>
                 <p className="text-sm text-muted-foreground">
                   Send automatic payment reminders to parents
                 </p>
               </div>
-              <Switch
-                checked={settings.paymentReminders}
-                onCheckedChange={(checked) => updateSetting('paymentReminders', checked)}
-              />
+              <div className="flex flex-col items-end gap-1">
+                <Switch
+                  checked={settings.paymentReminders}
+                  onCheckedChange={(checked) => updateSetting('paymentReminders', checked)}
+                  className="h-1 w-15 data-[state=checked]:bg-[#074e8e] dark:data-[state=checked]:bg-primary data-[state=unchecked]:bg-muted"
+                />
+                <span className="text-xs font-medium text-[#0d1026] dark:text-muted-foreground">
+                  {settings.paymentReminders ? 'Enabled' : 'Disabled'}
+                </span>
+              </div>
             </div>
             
             <div className="space-y-2">
@@ -356,51 +380,64 @@ const SchoolSettings = () => {
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">
-            <div className="flex items-center justify-between">
+            <div className="flex items-start justify-between p-3 rounded-lg hover:bg-muted/50 transition-colors">
               <div className="space-y-0.5">
-                <Label>Require Parent Verification</Label>
+                <Label className="text-base font-medium">Require Parent Verification</Label>
                 <p className="text-sm text-muted-foreground">
                   Require document verification for BNPL applications
                 </p>
               </div>
-              <Switch
-                checked={settings.requireParentVerification}
-                onCheckedChange={(checked) => updateSetting('requireParentVerification', checked)}
-              />
+              <div className="flex flex-col items-end gap-1">
+                <Switch
+                  checked={settings.requireParentVerification}
+                  onCheckedChange={(checked) => updateSetting('requireParentVerification', checked)}
+                  className="h-1 w-15 data-[state=checked]:bg-[#074e8e] dark:data-[state=checked]:bg-primary data-[state=unchecked]:bg-muted"
+                />
+                <span className="text-xs font-medium text-[#0d1026] dark:text-muted-foreground">
+                  {settings.requireParentVerification ? 'Enabled' : 'Disabled'}
+                </span>
+              </div>
             </div>
             
             <Separator />
             
-            <div className="flex items-center justify-between">
+            <div className="flex items-start justify-between p-3 rounded-lg hover:bg-muted/50 transition-colors">
               <div className="space-y-0.5">
-                <Label>Allow Online Payments</Label>
+                <Label className="text-base font-medium">Allow Online Payments</Label>
                 <p className="text-sm text-muted-foreground">
                   Enable online payment processing
                 </p>
               </div>
-              <Switch
-                checked={settings.allowOnlinePayments}
-                onCheckedChange={(checked) => updateSetting('allowOnlinePayments', checked)}
-              />
+              <div className="flex flex-col items-end gap-1">
+                <Switch
+                  checked={settings.allowOnlinePayments}
+                  onCheckedChange={(checked) => updateSetting('allowOnlinePayments', checked)}
+                  className="h-1 w-15 data-[state=checked]:bg-[#074e8e] dark:data-[state=checked]:bg-primary data-[state=unchecked]:bg-muted"
+                />
+                <span className="text-xs font-medium text-[#0d1026] dark:text-muted-foreground">
+                  {settings.allowOnlinePayments ? 'Enabled' : 'Disabled'}
+                </span>
+              </div>
             </div>
             
             <Separator />
             
-            <div className="flex items-center justify-between">
+            <div className="flex items-start justify-between p-3 rounded-lg hover:bg-muted/50 transition-colors">
               <div className="space-y-0.5">
-                <Label>Two-Factor Authentication</Label>
+                <Label className="text-base font-medium">Two-Factor Authentication</Label>
                 <p className="text-sm text-muted-foreground">
                   Enable 2FA for enhanced security
                 </p>
               </div>
-              <div className="flex items-center space-x-2">
+              <div className="flex flex-col items-end gap-1">
                 <Switch
                   checked={settings.twoFactorAuth}
                   onCheckedChange={(checked) => updateSetting('twoFactorAuth', checked)}
+                  className="h-1 w-15 data-[state=checked]:bg-[#074e8e] dark:data-[state=checked]:bg-primary data-[state=unchecked]:bg-muted"
                 />
-                {settings.twoFactorAuth && (
-                  <Badge variant="secondary">Enabled</Badge>
-                )}
+                <span className="text-xs font-medium text-[#0d1026] dark:text-muted-foreground">
+                  {settings.twoFactorAuth ? 'Enabled' : 'Disabled'}
+                </span>
               </div>
             </div>
           </CardContent>
