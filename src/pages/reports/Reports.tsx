@@ -326,7 +326,7 @@ ${reportData.schoolPerformance.map(school =>
             <div className="space-y-2">
               <label className="text-sm font-medium">Time Period</label>
               <Select value={selectedPeriod} onValueChange={setSelectedPeriod}>
-                <SelectTrigger className="w-full sm:w-[200px]">
+                <SelectTrigger className="w-full sm:w-[200px] text-[#0d1026] dark:text-white">
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
@@ -341,7 +341,7 @@ ${reportData.schoolPerformance.map(school =>
             <div className="space-y-2">
               <label className="text-sm font-medium">School Filter</label>
               <Select value={selectedSchool} onValueChange={setSelectedSchool}>
-                <SelectTrigger className="w-full sm:w-[200px]">
+                <SelectTrigger className="w-full sm:w-[200px] text-[#0d1026] dark:text-white">
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
