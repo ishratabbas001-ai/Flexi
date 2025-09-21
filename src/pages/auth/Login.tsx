@@ -62,8 +62,10 @@ const Login = () => {
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 via-white to-green-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 p-4">
       <div className="w-full max-w-md">
         <div className="text-center mb-8">
-          <div className="mx-auto w-16 h-16 bg-primary rounded-2xl flex items-center justify-center mb-4">
-            <GraduationCap className="w-8 h-8 text-primary-foreground" />
+          <div className="mx-auto w-40 h-32 flex items-center justify-center mb-3">
+            <a href="/" target="_self" rel="noopener noreferrer" className="hover:opacity-90 transition-opacity">
+              <img src="https://ik.imagekit.io/athcdn/flexilogo.png" alt="FlexiFee Logo" className="w-full h-full object-contain" />
+            </a>
           </div>
           <h1 className="text-3xl font-bold">Welcome Back</h1>
           <p className="text-muted-foreground">Sign in to your FlexiFee account</p>
@@ -132,7 +134,7 @@ const Login = () => {
                       className="text-xs p-2 bg-muted rounded text-left hover:bg-muted/80 transition-colors"
                       onClick={() => setFormData({ email: cred.email, password: cred.password })}
                     >
-                      <div className="font-medium">{cred.role}</div>
+                      <div className="font-medium text-[#0d1026] dark:text-white">{cred.role}</div>
                       <div className="text-muted-foreground">{cred.email}</div>
                     </button>
                   ))}
@@ -153,10 +155,10 @@ const Login = () => {
                 <span className="text-muted-foreground">Don't have account? </span>
                 <Button
                   variant="link"
-                  className="p-0 h-auto font-normal"
+                  className="p-0 h-auto font-normal text-[#ffffff] dark:text-white hover:text-[#ffffff]/90"
                   onClick={() => navigate('/register')}
                 >
-                  Click here to sign up
+                   Sign up Now! 
                 </Button>
               </div>
             </CardFooter>
