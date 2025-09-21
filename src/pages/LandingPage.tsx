@@ -134,7 +134,7 @@ Empowering education with smarter, simpler payment solutions — making learning
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" className="text-base sm:text-lg px-6 sm:px-8" onClick={() => navigate('/register')}>
-              Start Free Trial
+              Get Started
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
             <Button size="lg" variant="outline" className="text-base sm:text-lg px-6 sm:px-8">
