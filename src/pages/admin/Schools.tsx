@@ -396,9 +396,9 @@ const Schools = () => {
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6" style={{ width: '88%' }}>
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-        <div>
+        <div className="w-full">
           <h1 className="text-2xl sm:text-3xl font-bold">Schools Management</h1>
           <p className="text-muted-foreground">
             Manage registered schools and their details
@@ -406,7 +406,7 @@ const Schools = () => {
         </div>
         
         {/* Add New School Dialog */}
-        <Button className="w-full sm:w-auto" onClick={() => navigate('/admin/add-school')}>
+        <Button className="w-full sm:w-fit whitespace-nowrap" onClick={() => navigate('/admin/add-school')}>
           <Plus className="mr-2 h-4 w-4" />
           Add New School
         </Button>
@@ -506,7 +506,7 @@ const Schools = () => {
                   </DialogTrigger>
                   <DialogContent className="sm:max-w-[600px] max-h-[90vh] overflow-y-auto">
                     <DialogHeader>
-                      <DialogTitle>School Details Edit Karein</DialogTitle>
+                      <DialogTitle>Edit School Details</DialogTitle>
                       <DialogDescription>
                         Update details for {school.name}.
                       </DialogDescription>
