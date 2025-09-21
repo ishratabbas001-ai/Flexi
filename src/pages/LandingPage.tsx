@@ -177,7 +177,7 @@ Empowering education with smarter, simpler payment solutions — making learning
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div>
             <h2 className="text-2xl sm:text-3xl font-bold mb-6">
-              FlexiFee kyun choose karein?
+              Why choose FlexiFee?
             </h2>
             <ul className="space-y-4">
               {benefits.map((benefit, index) => (
