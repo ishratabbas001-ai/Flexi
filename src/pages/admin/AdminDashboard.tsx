@@ -180,9 +180,7 @@ const AdminDashboard = () => {
               </div>
               <Badge variant="secondary">24</Badge>
             </div>
-            <Button className="w-full" variant="outline">
-              Configure Settings
-            </Button>
+            
             <Button 
               className="w-full" 
               variant="outline"
