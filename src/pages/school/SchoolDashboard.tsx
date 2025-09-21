@@ -252,20 +252,20 @@ const SchoolDashboard = () => {
   }
 
   return (
-    <div className="space-y-6">
-      <div className="flex items-center justify-between">
+    <div className="space-y-6 px-4 sm:px-6 w-full max-w-[100vw] overflow-hidden">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
         <div>
-          <h1 className="text-3xl font-bold">School Dashboard</h1>
+          <h1 className="text-2xl sm:text-3xl font-bold">School Dashboard</h1>
           <p className="text-muted-foreground">
             Welcome back! Manage your students and BNPL applications.
           </p>
         </div>
-        <div className="flex space-x-2">
-          <Button variant="outline" onClick={() => navigate('/school/add-student')}>
+        <div className="flex flex-col sm:flex-row w-full sm:w-auto gap-2 sm:space-x-2">
+          <Button variant="outline" onClick={() => navigate('/school/add-student')} className="w-full sm:w-auto whitespace-nowrap">
             <UserPlus className="mr-2 h-4 w-4" />
             Add Student
           </Button>
-          <Button onClick={() => navigate('/reports')}>
+          <Button onClick={() => navigate('/reports')} className="w-full sm:w-auto whitespace-nowrap">
             <BarChart3 className="mr-2 h-4 w-4" />
             View Reports
           </Button>
@@ -274,8 +274,8 @@ const SchoolDashboard = () => {
 
       {/* Stats Cards */}
       {stats && (
-        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-          <Card>
+        <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+          <Card className="w-full">
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
               <CardTitle className="text-sm font-medium">Total Students</CardTitle>
               <Users className="h-4 w-4 text-muted-foreground" />
@@ -329,10 +329,10 @@ const SchoolDashboard = () => {
         </div>
       )}
 
-      <div className="grid gap-6 lg:grid-cols-3">
-        <div className="lg:col-span-2 space-y-6">
+      <div className="grid gap-6 grid-cols-1 lg:grid-cols-3">
+        <div className="lg:col-span-2 space-y-6 w-full">
           {/* Recent Students */}
-          <Card>
+          <Card className="w-full">
             <CardHeader>
               <CardTitle className="flex items-center">
                 <GraduationCap className="mr-2 h-5 w-5" />
