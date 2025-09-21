@@ -113,14 +113,11 @@ const ParentSettings = () => {
         <div>
           <h1 className="text-3xl font-bold">Parent Settings</h1>
           <p className="text-muted-foreground">
-            Manage your account preferences and notification settings
+            Manage your account preferences
           </p>
         </div>
         <div className="flex space-x-2">
-          <Button variant="outline" onClick={handleReset}>
-            <RefreshCw className="mr-2 h-4 w-4" />
-            Reset to Defaults
-          </Button>
+          
           <Button onClick={handleSave} disabled={loading}>
             <Save className="mr-2 h-4 w-4" />
             {loading ? 'Saving...' : 'Save Changes'}
@@ -246,6 +243,7 @@ const ParentSettings = () => {
               <Switch
                 checked={settings.emailNotifications}
                 onCheckedChange={(checked) => updateSetting('emailNotifications', checked)}
+                className="h-1 w-15 data-[state=checked]:bg-[#074e8e]"
               />
             </div>
             
@@ -261,6 +259,7 @@ const ParentSettings = () => {
               <Switch
                 checked={settings.smsNotifications}
                 onCheckedChange={(checked) => updateSetting('smsNotifications', checked)}
+                className="h-1 w-15 data-[state=checked]:bg-[#074e8e]"
               />
             </div>
             
@@ -276,6 +275,7 @@ const ParentSettings = () => {
               <Switch
                 checked={settings.paymentReminders}
                 onCheckedChange={(checked) => updateSetting('paymentReminders', checked)}
+                className="h-1 w-15 data-[state=checked]:bg-[#074e8e]"
               />
             </div>
             
@@ -291,6 +291,7 @@ const ParentSettings = () => {
               <Switch
                 checked={settings.applicationUpdates}
                 onCheckedChange={(checked) => updateSetting('applicationUpdates', checked)}
+                className="h-1 w-15 data-[state=checked]:bg-[#074e8e]"
               />
             </div>
             
@@ -348,6 +349,7 @@ const ParentSettings = () => {
                 <Switch
                   checked={settings.autoPayEnabled}
                   onCheckedChange={(checked) => updateSetting('autoPayEnabled', checked)}
+                  className="h-1 w-15 data-[state=checked]:bg-[#074e8e]"
                 />
                 {settings.autoPayEnabled && (
                   <Badge variant="secondary">Enabled</Badge>
@@ -367,6 +369,7 @@ const ParentSettings = () => {
               <Switch
                 checked={settings.savePaymentMethods}
                 onCheckedChange={(checked) => updateSetting('savePaymentMethods', checked)}
+                className="h-1 w-15 data-[state=checked]:bg-[#074e8e]"
               />
             </div>
           </CardContent>
@@ -394,6 +397,7 @@ const ParentSettings = () => {
               <Switch
                 checked={settings.shareDataWithSchool}
                 onCheckedChange={(checked) => updateSetting('shareDataWithSchool', checked)}
+                className="h-1 w-15 data-[state=checked]:bg-[#074e8e]"
               />
             </div>
             
@@ -409,6 +413,7 @@ const ParentSettings = () => {
               <Switch
                 checked={settings.allowMarketingEmails}
                 onCheckedChange={(checked) => updateSetting('allowMarketingEmails', checked)}
+                className="h-1 w-15 data-[state=checked]:bg-[#074e8e]"
               />
             </div>
             
@@ -425,6 +430,7 @@ const ParentSettings = () => {
                 <Switch
                   checked={settings.twoFactorAuth}
                   onCheckedChange={(checked) => updateSetting('twoFactorAuth', checked)}
+                  className="h-1 w-15 data-[state=checked]:bg-[#074e8e]"
                 />
                 {settings.twoFactorAuth && (
                   <Badge className="bg-green-100 text-green-800">Active</Badge>
@@ -444,6 +450,7 @@ const ParentSettings = () => {
               <Switch
                 checked={settings.loginNotifications}
                 onCheckedChange={(checked) => updateSetting('loginNotifications', checked)}
+                className="h-1 w-15 data-[state=checked]:bg-[#074e8e]"
               />
             </div>
             
