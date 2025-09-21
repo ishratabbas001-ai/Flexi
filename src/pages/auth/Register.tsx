@@ -86,9 +86,9 @@ const Register = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 via-white to-green-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 p-4">
-      <div className="w-full max-w-md">
-        <div className="text-center mb-8">
+    <div className="min-h-screen w-screen flex flex-col items-center justify-center bg-gradient-to-br from-blue-50 via-white to-green-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
+      <div className="w-[calc(100%-2rem)] sm:w-full max-w-[90%] sm:max-w-md">
+        <div className="text-center mb-8 w-full">
           <div className="mx-auto w-16 h-16 bg-primary rounded-2xl flex items-center justify-center mb-4">
             <GraduationCap className="w-8 h-8 text-primary-foreground" />
           </div>
@@ -96,8 +96,8 @@ const Register = () => {
           <p className="text-muted-foreground">Join FlexiFee Now</p>
         </div>
 
-        <Card className="shadow-lg">
-          <form onSubmit={handleSubmit}>
+        <Card className="shadow-lg w-full overflow-hidden min-w-full">
+          <form onSubmit={handleSubmit} className="w-full">
             <CardHeader className="space-y-1">
               <CardTitle className="text-2xl font-bold text-center">Sign Up</CardTitle>
               <CardDescription className="text-center">
@@ -105,9 +105,9 @@ const Register = () => {
               </CardDescription>
             </CardHeader>
             
-            <CardContent className="space-y-4">
+            <CardContent className="space-y-4 w-full">
               {error && (
-                <Alert variant="destructive">
+                <Alert variant="destructive" className="w-full">
                   <AlertDescription>{error}</AlertDescription>
                 </Alert>
               )}
@@ -180,9 +180,9 @@ const Register = () => {
                   />
                   <Button
                     type="button"
-                    variant="ghost"
+                    variant="outline"
                     size="icon"
-                    className="absolute right-2 top-1/2 -translate-y-1/2 h-8 w-8"
+                    className="absolute right-0 top-1/2 -translate-y-1/2 h-8 w-8"
                     onClick={() => setShowPassword(!showPassword)}
                   >
                     {showPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
@@ -214,10 +214,10 @@ const Register = () => {
               </Button>
 
               <div className="text-center text-sm">
-                <span className="text-muted-foreground">Pehle se account hai? </span>
+                <span className="text-muted-foreground">Already have an account? </span>
                 <Button
                   variant="link"
-                  className="p-0 h-auto font-normal"
+                  className="text-[#ffffff] dark:text-white hover:text-[#ffffff]/90"
                   onClick={() => navigate('/login')}
                 >
                   Sign in here
