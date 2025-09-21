@@ -275,7 +275,7 @@ const SchoolDashboard = () => {
       {/* Stats Cards */}
       {stats && (
         <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
-          <Card className="w-full">
+          <Card className="w-full bg-[#dcebfe66]">
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
               <CardTitle className="text-sm font-medium">Total Students</CardTitle>
               <Users className="h-4 w-4 text-muted-foreground" />
@@ -288,7 +288,7 @@ const SchoolDashboard = () => {
             </CardContent>
           </Card>
 
-          <Card>
+          <Card className="bg-[#defce966]">
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
               <CardTitle className="text-sm font-medium">BNPL Students</CardTitle>
               <CreditCard className="h-4 w-4 text-blue-600" />
@@ -301,7 +301,7 @@ const SchoolDashboard = () => {
             </CardContent>
           </Card>
 
-          <Card>
+          <Card className="bg-[#f2e5ff66]">
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
               <CardTitle className="text-sm font-medium">Total Collections</CardTitle>
               <DollarSign className="h-4 w-4 text-green-600" />
@@ -314,7 +314,7 @@ const SchoolDashboard = () => {
             </CardContent>
           </Card>
 
-          <Card>
+          <Card className="bg-[#ffedd666]">
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
               <CardTitle className="text-sm font-medium">Pending Applications</CardTitle>
               <Clock className="h-4 w-4 text-yellow-600" />
