@@ -219,7 +219,7 @@ Empowering education with smarter, simpler payment solutions — making learning
             Hundreds of schools are already using FlexiFee to improve fee collection and make education accessible for everyone.
           </p>
           <Button size="lg" className="text-base sm:text-lg px-6 sm:px-8" onClick={() => navigate('/register')}>
-            Start Your Free Trial
+            Get Started Now!
           </Button>
         </div>
       </section>
