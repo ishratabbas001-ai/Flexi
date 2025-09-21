@@ -13,7 +13,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
-import { Bell, Moon, Sun, LogOut, Settings, Menu, 
+import { Bell, Moon, LogOut, Settings, Menu, 
   LayoutDashboard, 
   Users, 
   CreditCard, 
@@ -21,7 +21,9 @@ import { Bell, Moon, Sun, LogOut, Settings, Menu,
   GraduationCap,
   DollarSign,
   BarChart3,
-  UserPlus
+  UserPlus,
+  SunMedium,
+  User
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { useLocation } from 'react-router-dom';
@@ -91,7 +93,7 @@ const Header = () => {
           <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon" className="sm:hidden">
-                <Menu className="h-5 w-5" />
+                <Menu className="absolute h-5 w-5" />
               </Button>
             </SheetTrigger>
             <SheetContent side="left" className="w-64 p-0">
@@ -138,26 +140,24 @@ const Header = () => {
 
         <div className="flex items-center space-x-4">
           <Button
-            variant="ghost"
+            variant="outline"
             size="icon"
+            className="border-2"
             onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
           >
-            <Sun className="h-4 w-4 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-            <Moon className="absolute h-4 w-4 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+            <SunMedium className="absolute h-4 w-4 rotate-0 scale-100 transition-all stroke-[2.5] text-black dark:-rotate-90 dark:scale-0" />
+            <Moon className="absolute h-5 w-5 rotate-90 scale-0 transition-all stroke-[2] dark:rotate-0 dark:scale-100" />
             <span className="sr-only">Toggle theme</span>
           </Button>
 
           <Button variant="ghost" size="icon" className="hidden sm:flex">
-            <Bell className="h-4 w-4" />
+            <Bell className="absolute h-4 w-4" />
           </Button>
 
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <Button variant="ghost" className="relative h-8 w-8 sm:h-10 sm:w-10 rounded-full">
-                <Avatar className="h-8 w-8 sm:h-10 sm:w-10">
-                  <AvatarImage src={user?.avatar} alt={user?.name} />
-                  <AvatarFallback>{user?.name.charAt(0).toUpperCase()}</AvatarFallback>
-                </Avatar>
+              <Button variant="ghost" className="relative h-5 w-5 sm:h-10 sm:w-10 rounded-full flex items-center justify-center">
+                <User className="absolute h-5 w-5 sm:h-5 sm:w-5" />
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent className="w-56 mr-4" align="end" forceMount>
