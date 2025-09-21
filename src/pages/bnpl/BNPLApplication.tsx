@@ -234,12 +234,12 @@ const BNPLApplication = () => {
                 <div className="space-y-2">
                   <Label htmlFor="student">Student</Label>
                   <Select value={formData.student_id} onValueChange={handleStudentSelect}>
-                    <SelectTrigger>
+                    <SelectTrigger className="text-[#0d1026] dark:text-white">
                       <SelectValue placeholder="Select a student" />
                     </SelectTrigger>
                     <SelectContent>
                       {students.map(student => (
-                        <SelectItem key={student.id} value={student.id}>
+                        <SelectItem key={student.id} value={student.id} className="text-[#0d1026] dark:text-white">
                           {student.name} - {student.class} ({student.school_name})
                         </SelectItem>
                       ))}
@@ -330,14 +330,14 @@ const BNPLApplication = () => {
                       value={formData.employment_type} 
                       onValueChange={(value) => setFormData(prev => ({ ...prev, employment_type: value }))}
                     >
-                      <SelectTrigger>
+                      <SelectTrigger className="text-[#0d1026] dark:text-white">
                         <SelectValue placeholder="Select employment type" />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="salaried">Salaried Employee</SelectItem>
-                        <SelectItem value="business">Business Owner</SelectItem>
-                        <SelectItem value="freelancer">Freelancer</SelectItem>
-                        <SelectItem value="other">Other</SelectItem>
+                        <SelectItem value="salaried" className="text-[#0d1026] dark:text-white">Salaried Employee</SelectItem>
+                        <SelectItem value="business" className="text-[#0d1026] dark:text-white">Business Owner</SelectItem>
+                        <SelectItem value="freelancer" className="text-[#0d1026] dark:text-white">Freelancer</SelectItem>
+                        <SelectItem value="other" className="text-[#0d1026] dark:text-white">Other</SelectItem>
                       </SelectContent>
                     </Select>
                   </div>
