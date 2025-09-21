@@ -274,25 +274,25 @@ const Applications = () => {
             </div>
             
             <Select value={statusFilter} onValueChange={setStatusFilter}>
-              <SelectTrigger className="w-full sm:w-[180px]">
+              <SelectTrigger className="w-full sm:w-[180px] text-[#0d1026] dark:text-white">
                 <SelectValue placeholder="Status filter" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="all">All Status</SelectItem>
-                <SelectItem value="pending">Pending</SelectItem>
-                <SelectItem value="approved">Approved</SelectItem>
-                <SelectItem value="rejected">Rejected</SelectItem>
+                <SelectItem value="all" className="text-[#0d1026] dark:text-white">All Status</SelectItem>
+                <SelectItem value="pending" className="text-[#0d1026] dark:text-white">Pending</SelectItem>
+                <SelectItem value="approved" className="text-[#0d1026] dark:text-white">Approved</SelectItem>
+                <SelectItem value="rejected" className="text-[#0d1026] dark:text-white">Rejected</SelectItem>
               </SelectContent>
             </Select>
             
             <Select value={schoolFilter} onValueChange={setSchoolFilter}>
-              <SelectTrigger className="w-full sm:w-[200px]">
+              <SelectTrigger className="w-full sm:w-[200px] text-[#0d1026] dark:text-white">
                 <SelectValue placeholder="School filter" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="all">All Schools</SelectItem>
+                <SelectItem value="all" className="text-[#0d1026] dark:text-white">All Schools</SelectItem>
                 {uniqueSchools.map(school => (
-                  <SelectItem key={school} value={school}>{school}</SelectItem>
+                  <SelectItem key={school} value={school} className="text-[#0d1026] dark:text-white">{school}</SelectItem>
                 ))}
               </SelectContent>
             </Select>
