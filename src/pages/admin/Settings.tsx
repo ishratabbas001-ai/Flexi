@@ -283,6 +283,7 @@ const Settings = () => {
               <Switch
                 checked={settings.emailNotifications}
                 onCheckedChange={(checked) => updateSetting('emailNotifications', checked)}
+                className="h-1 w-15 data-[state=checked]:bg-[#074e8e]"
               />
             </div>
             
@@ -298,6 +299,7 @@ const Settings = () => {
               <Switch
                 checked={settings.smsNotifications}
                 onCheckedChange={(checked) => updateSetting('smsNotifications', checked)}
+                className="h-1 w-15 data-[state=checked]:bg-[#074e8e]"
               />
             </div>
             
@@ -340,6 +342,7 @@ const Settings = () => {
               <Switch
                 checked={settings.requireDocumentVerification}
                 onCheckedChange={(checked) => updateSetting('requireDocumentVerification', checked)}
+                className="h-1 w-15 data-[state=checked]:bg-[#074e8e]"
               />
             </div>
             
@@ -355,6 +358,7 @@ const Settings = () => {
               <Switch
                 checked={settings.autoApproveApplications}
                 onCheckedChange={(checked) => updateSetting('autoApproveApplications', checked)}
+                className="h-1 w-15 data-[state=checked]:bg-[#074e8e]"
               />
             </div>
             
@@ -394,6 +398,7 @@ const Settings = () => {
                 <Switch
                   checked={settings.maintenanceMode}
                   onCheckedChange={(checked) => updateSetting('maintenanceMode', checked)}
+                  className="h-1 w-15 data-[state=checked]:bg-[#074e8e]"
                 />
                 {settings.maintenanceMode && (
                   <Badge variant="destructive">Active</Badge>
@@ -413,6 +418,7 @@ const Settings = () => {
               <Switch
                 checked={settings.debugMode}
                 onCheckedChange={(checked) => updateSetting('debugMode', checked)}
+                className="h-1 w-15 data-[state=checked]:bg-[#074e8e]"
               />
             </div>
           </CardContent>
