@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -9,7 +9,6 @@ import { Badge } from '@/components/ui/badge';
 import { 
   Settings as SettingsIcon, 
   Save, 
-  RefreshCw,
   CreditCard,
   Mail,
   Shield,
@@ -17,73 +16,109 @@ import {
   Database
 } from 'lucide-react';
 import { toast } from 'sonner';
+import { supabase } from '@/lib/supabase';
 
 const Settings = () => {
   const [settings, setSettings] = useState({
-    // BNPL Configuration
     defaultDownPayment: 25,
     maxInstallments: 12,
     interestRate: 0,
     processingFee: 500,
-    
-    // Email Configuration
     smtpHost: 'smtp.flexifee.com',
     smtpPort: 587,
     smtpUsername: 'noreply@flexifee.com',
     smtpPassword: '',
-    
-    // Notification Settings
     emailNotifications: true,
     smsNotifications: false,
     reminderDays: 3,
-    
-    // Security Settings
     requireDocumentVerification: true,
     autoApproveApplications: false,
     maxApplicationAmount: 100000,
-    
-    // System Settings
     maintenanceMode: false,
     debugMode: false,
   });
 
   const [loading, setLoading] = useState(false);
+  const [settingsId, setSettingsId] = useState<string | null>(null);
+
+  // Load settings on component mount
+  useEffect(() => {
+    loadSettings();
+  }, []);
+
+  const loadSettings = async () => {
+    try {
+      const { data, error } = await supabase
+        .from('admin_settings')
+        .select('*')
+        .single();
+
+      if (error) throw error;
+
+      if (data) {
+        setSettingsId(data.id);
+        setSettings({
+          defaultDownPayment: data.default_down_payment,
+          maxInstallments: data.max_installments,
+          interestRate: data.interest_rate,
+          processingFee: data.processing_fee,
+          smtpHost: data.smtp_host,
+          smtpPort: data.smtp_port,
+          smtpUsername: data.smtp_username,
+          smtpPassword: data.smtp_password || '',
+          emailNotifications: data.email_notifications,
+          smsNotifications: data.sms_notifications,
+          reminderDays: data.reminder_days,
+          requireDocumentVerification: data.require_document_verification,
+          autoApproveApplications: data.auto_approve_applications,
+          maxApplicationAmount: data.max_application_amount,
+          maintenanceMode: data.maintenance_mode,
+          debugMode: data.debug_mode,
+        });
+      }
+    } catch (error) {
+      console.error('Error loading settings:', error);
+      toast.error('Failed to load settings');
+    }
+  };
 
   const handleSave = async () => {
     setLoading(true);
     try {
-      // Save settings to localStorage for demo
-      localStorage.setItem('admin_settings', JSON.stringify(settings));
+      const { error } = await supabase
+        .from('admin_settings')
+        .upsert({
+          id: settingsId,
+          default_down_payment: settings.defaultDownPayment,
+          max_installments: settings.maxInstallments,
+          interest_rate: settings.interestRate,
+          processing_fee: settings.processingFee,
+          smtp_host: settings.smtpHost,
+          smtp_port: settings.smtpPort,
+          smtp_username: settings.smtpUsername,
+          smtp_password: settings.smtpPassword,
+          email_notifications: settings.emailNotifications,
+          sms_notifications: settings.smsNotifications,
+          reminder_days: settings.reminderDays,
+          require_document_verification: settings.requireDocumentVerification,
+          auto_approve_applications: settings.autoApproveApplications,
+          max_application_amount: settings.maxApplicationAmount,
+          maintenance_mode: settings.maintenanceMode,
+          debug_mode: settings.debugMode,
+          updated_at: new Date().toISOString(),
+        });
+
+      if (error) throw error;
+      
       toast.success('Settings saved successfully!');
     } catch (error) {
+      console.error('Error saving settings:', error);
       toast.error('Failed to save settings');
     } finally {
       setLoading(false);
     }
   };
 
-  const handleReset = () => {
-    // Reset to default values
-    setSettings({
-      defaultDownPayment: 25,
-      maxInstallments: 12,
-      interestRate: 0,
-      processingFee: 500,
-      smtpHost: 'smtp.flexifee.com',
-      smtpPort: 587,
-      smtpUsername: 'noreply@flexifee.com',
-      smtpPassword: '',
-      emailNotifications: true,
-      smsNotifications: false,
-      reminderDays: 3,
-      requireDocumentVerification: true,
-      autoApproveApplications: false,
-      maxApplicationAmount: 100000,
-      maintenanceMode: false,
-      debugMode: false,
-    });
-    toast.success('Settings reset to defaults');
-  };
 
   const updateSetting = (key: string, value: any) => {
     setSettings(prev => ({ ...prev, [key]: value }));
@@ -99,10 +134,6 @@ const Settings = () => {
           </p>
         </div>
         <div className="flex space-x-2">
-          <Button variant="outline" onClick={handleReset}>
-            <RefreshCw className="mr-2 h-4 w-4" />
-            Reset to Defaults
-          </Button>
           <Button onClick={handleSave} disabled={loading}>
             <Save className="mr-2 h-4 w-4" />
             {loading ? 'Saving...' : 'Save Changes'}
