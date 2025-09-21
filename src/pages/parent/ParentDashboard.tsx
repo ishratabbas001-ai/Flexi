@@ -218,7 +218,7 @@ const ParentDashboard = () => {
 
       {/* Stats Cards */}
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-        <Card>
+        <Card className="bg-[#dcebfe66]">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">My Children</CardTitle>
             <Users className="h-4 w-4 text-muted-foreground" />
@@ -231,7 +231,7 @@ const ParentDashboard = () => {
           </CardContent>
         </Card>
 
-        <Card>
+        <Card className="bg-[#defce966]">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Active BNPL Plans</CardTitle>
             <CreditCard className="h-4 w-4 text-green-600" />
@@ -244,7 +244,7 @@ const ParentDashboard = () => {
           </CardContent>
         </Card>
 
-        <Card>
+        <Card className="bg-[#f2e5ff66]">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Pending Applications</CardTitle>
             <Clock className="h-4 w-4 text-yellow-600" />
@@ -257,7 +257,7 @@ const ParentDashboard = () => {
           </CardContent>
         </Card>
 
-        <Card>
+        <Card className="bg-[#ffedd666]">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Pending Payments</CardTitle>
             <DollarSign className="h-4 w-4 text-red-600" />
