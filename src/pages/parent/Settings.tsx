@@ -285,7 +285,7 @@ const ParentSettings = () => {
               <div className="space-y-0.5">
                 <Label>Application Updates</Label>
                 <p className="text-sm text-muted-foreground">
-                  Get notified about BNPL application status changes
+                  Get notified about application status changes
                 </p>
               </div>
               <Switch
