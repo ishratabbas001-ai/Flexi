@@ -109,7 +109,7 @@ const SchoolSettings = () => {
         <div className="w-full">
           <h1 className="text-2xl sm:text-3xl font-bold">School Settings</h1>
           <p className="text-muted-foreground">
-            Configure your school preferences and BNPL settings
+            Configure your school preferences and payment settings
           </p>
         </div>
         <div className="flex flex-col sm:flex-row w-full sm:w-auto gap-2 sm:space-x-2">
@@ -215,15 +215,15 @@ const SchoolSettings = () => {
               BNPL Configuration
             </CardTitle>
             <CardDescription>
-              Configure Buy Now Pay Later settings for your school
+              Configure settings for your school
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">
             <div className="flex items-start justify-between p-3 rounded-lg hover:bg-muted/50 transition-colors">
               <div className="space-y-0.5">
-                <Label className="text-base font-medium">Enable BNPL</Label>
+                <Label className="text-base font-medium">Enable Flexi Payments</Label>
                 <p className="text-sm text-muted-foreground">
-                  Allow parents to apply for Buy Now Pay Later plans
+                  Allow parents to apply for plans
                 </p>
               </div>
               <div className="flex flex-col items-end gap-1">
@@ -384,7 +384,7 @@ const SchoolSettings = () => {
               <div className="space-y-0.5">
                 <Label className="text-base font-medium">Require Parent Verification</Label>
                 <p className="text-sm text-muted-foreground">
-                  Require document verification for BNPL applications
+                  Require document verification for applications
                 </p>
               </div>
               <div className="flex flex-col items-end gap-1">
