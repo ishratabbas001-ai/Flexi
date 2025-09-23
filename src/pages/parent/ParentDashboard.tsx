@@ -212,7 +212,7 @@ const ParentDashboard = () => {
         </div>
         <Button onClick={() => navigate('/bnpl/apply')}>
           <Plus className="mr-2 h-4 w-4" />
-          Apply for BNPL
+          Apply for FlexiFee
         </Button>
       </div>
 
@@ -233,7 +233,7 @@ const ParentDashboard = () => {
 
         <Card className="bg-[#defce966]">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Active BNPL Plans</CardTitle>
+            <CardTitle className="text-sm font-medium">Active Payment Plans</CardTitle>
             <CreditCard className="h-4 w-4 text-green-600" />
           </CardHeader>
           <CardContent>
@@ -281,7 +281,7 @@ const ParentDashboard = () => {
                 My Children
               </CardTitle>
               <CardDescription>
-                Overview of your children's enrollment and BNPL status
+                Overview of your children's enrollment and status
               </CardDescription>
             </CardHeader>
             <CardContent>
@@ -314,7 +314,7 @@ const ParentDashboard = () => {
                             size="sm" 
                             onClick={() => navigate('/bnpl/apply')}
                           >
-                            Apply BNPL
+                            Apply for Installment
                           </Button>
                         )}
                       </div>
@@ -330,7 +330,7 @@ const ParentDashboard = () => {
             <CardHeader>
               <CardTitle className="flex items-center">
                 <CreditCard className="mr-2 h-5 w-5" />
-                BNPL Applications
+                Active Applications
               </CardTitle>
               <CardDescription>
                 Status and progress of your payment plans
@@ -340,7 +340,7 @@ const ParentDashboard = () => {
               {bnplApplications.length === 0 ? (
                 <div className="text-center py-8">
                   <CreditCard className="w-12 h-12 mx-auto text-muted-foreground mb-4" />
-                  <p className="text-muted-foreground mb-4">No BNPL applications yet</p>
+                  <p className="text-muted-foreground mb-4">No applications yet</p>
                   <Button onClick={() => navigate('/bnpl/apply')}>
                     <Plus className="mr-2 h-4 w-4" />
                     Apply for BNPL
