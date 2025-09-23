@@ -130,7 +130,7 @@ const Settings = () => {
         <div>
           <h1 className="text-3xl font-bold">System Settings</h1>
           <p className="text-muted-foreground">
-            Configure BNPL system parameters and preferences
+            Configure system parameters and preferences
           </p>
         </div>
         <div className="flex space-x-2">
@@ -147,10 +147,10 @@ const Settings = () => {
           <CardHeader>
             <CardTitle className="flex items-center">
               <CreditCard className="mr-2 h-5 w-5" />
-              BNPL Configuration
+              Payment Configuration
             </CardTitle>
             <CardDescription>
-              Configure Buy Now Pay Later plan parameters
+              Configure Payment plan parameters
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">
