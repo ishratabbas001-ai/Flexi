@@ -121,11 +121,11 @@ const Students = () => {
   const getBNPLStatusBadge = (status?: string) => {
     switch (status) {
       case 'active':
-        return <Badge className="bg-blue-100 text-blue-800">BNPL Active</Badge>;
+        return <Badge className="bg-blue-100 text-blue-800">Active Application</Badge>;
       case 'pending':
-        return <Badge className="bg-yellow-100 text-yellow-800">BNPL Pending</Badge>;
+        return <Badge className="bg-yellow-100 text-yellow-800">Application Pending</Badge>;
       case 'completed':
-        return <Badge className="bg-green-100 text-green-800">BNPL Completed</Badge>;
+        return <Badge className="bg-green-100 text-green-800">Application Completed</Badge>;
       default:
         return null;
     }
@@ -147,7 +147,7 @@ const Students = () => {
         <div>
           <h1 className="text-2xl sm:text-3xl font-bold">Students Management</h1>
           <p className="text-muted-foreground">
-            Manage Student and Installment Plans.
+            Manage your student payment plans and applications.
           </p>
         </div>
         <Button className="w-full sm:w-auto" onClick={() => navigate('/school/add-student')}>
