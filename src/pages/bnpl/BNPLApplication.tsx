@@ -205,15 +205,15 @@ const BNPLApplication = () => {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-3xl font-bold">BNPL Application</h1>
+        <h1 className="text-3xl font-bold">Payment Application</h1>
         <p className="text-muted-foreground">
-          Aply for Buy Now Pay Later plan
+          Apply for Payment plan
         </p>
       </div>
 
       <Tabs defaultValue="application" className="space-y-6">
         <TabsList className="grid w-full grid-cols-2">
-          <TabsTrigger value="application">BNPL Application</TabsTrigger>
+          <TabsTrigger value="application">Active Application</TabsTrigger>
           <TabsTrigger value="calculator">Fee Calculator</TabsTrigger>
         </TabsList>
 
@@ -227,7 +227,7 @@ const BNPLApplication = () => {
                   Select Student
                 </CardTitle>
                 <CardDescription>
-                  Choose the student for BNPL application
+                  Choose the student for application
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
@@ -281,7 +281,7 @@ const BNPLApplication = () => {
                     Payment Plan Details
                   </CardTitle>
                   <CardDescription>
-                    BNPL payment breakdown
+                    Installment payment breakdown
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
@@ -466,7 +466,7 @@ const BNPLApplication = () => {
                 Fee Calculator
               </CardTitle>
               <CardDescription>
-                Calculate your BNPL payment plan with 25% down payment and 6 installments
+                Calculate your payment plan with 25% down payment and 6 installments
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-6">
