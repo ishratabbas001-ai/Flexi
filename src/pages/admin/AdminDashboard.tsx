@@ -28,7 +28,7 @@ const AdminDashboard = () => {
       bgColor: 'bg-blue-100',
     },
     {
-      title: 'Active BNPL Students',
+      title: 'Active Students',
       value: '1,247',
       change: '+15% from last month',
       icon: Users,
@@ -79,7 +79,7 @@ const AdminDashboard = () => {
         <div>
           <h1 className="text-3xl font-bold">Admin Dashboard</h1>
           <p className="text-muted-foreground">
-            Manage schools, users, and BNPL applications
+            Manage schools, users, and applications
           </p>
         </div>
         <Button onClick={() => navigate('/reports')}>
@@ -95,7 +95,7 @@ const AdminDashboard = () => {
             key={index} 
             className={`hover:shadow-md transition-shadow ${
               stat.title === 'Total Schools' ? 'bg-[#dcebfe66]' :
-              stat.title === 'Active BNPL Students' ? 'bg-[#defce966]' :
+              stat.title === 'Active Students' ? 'bg-[#defce966]' :
               stat.title === 'Total Collections' ? 'bg-[#f2e5ff66]' :
               stat.title === 'Pending Applications' ? 'bg-[#ffedd666]' : ''
             }`}
@@ -119,12 +119,12 @@ const AdminDashboard = () => {
       </div>
 
       <div className="grid gap-6 md:grid-cols-2">
-        {/* Recent BNPL Applications */}
+        {/* Recent Applications */}
         <Card>
           <CardHeader>
             <CardTitle className="flex items-center">
               <CreditCard className="mr-2 h-5 w-5" />
-              Recent BNPL Applications
+              Recent Applications
             </CardTitle>
             <CardDescription>
               Latest applications requiring approval
@@ -161,7 +161,7 @@ const AdminDashboard = () => {
         {/* System Configuration */}
         <Card>
           <CardHeader>
-            <CardTitle>BNPL Configuration</CardTitle>
+            <CardTitle>Payment Configuration</CardTitle>
             <CardDescription>
               Current system settings and rules
             </CardDescription>
@@ -177,7 +177,7 @@ const AdminDashboard = () => {
             <div className="flex items-center justify-between p-3 border rounded-lg">
               <div>
                 <p className="font-medium">Maximum Installments</p>
-                <p className="text-sm text-muted-foreground">Per BNPL plan</p>
+                <p className="text-sm text-muted-foreground">Per Payment plan</p>
               </div>
               <Badge variant="secondary">12 months</Badge>
             </div>
