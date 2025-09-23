@@ -375,7 +375,7 @@ ${reportData.schoolPerformance.map(school =>
 
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">BNPL Applications</CardTitle>
+            <CardTitle className="text-sm font-medium">Active Applications</CardTitle>
             <CreditCard className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
@@ -426,7 +426,7 @@ ${reportData.schoolPerformance.map(school =>
               Application Status
             </CardTitle>
             <CardDescription>
-              Breakdown of BNPL application statuses
+              Breakdown of application statuses
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">
@@ -575,7 +575,7 @@ ${reportData.schoolPerformance.map(school =>
             Top Performing Schools
           </CardTitle>
           <CardDescription>
-            Schools with highest BNPL adoption
+            Schools with highest adoption
           </CardDescription>
         </CardHeader>
         <CardContent>
@@ -589,7 +589,7 @@ ${reportData.schoolPerformance.map(school =>
                   </p>
                 </div>
                 <div className="text-right space-y-1">
-                  <p className="font-medium">{school.bnplStudents} BNPL students</p>
+                  <p className="font-medium">{school.bnplStudents} Active students</p>
                   <Badge variant="outline">
                     {school.students > 0 ? ((school.bnplStudents / school.students) * 100).toFixed(1) : 0}% adoption
                   </Badge>
@@ -617,7 +617,7 @@ ${reportData.schoolPerformance.map(school =>
               <p><strong>Total Students:</strong> {reportData.totalStudents}</p>
             </div>
             <div className="space-y-2">
-              <p><strong>BNPL Applications:</strong> {reportData.totalBNPLApplications}</p>
+              <p><strong>Total Applications:</strong> {reportData.totalBNPLApplications}</p>
               <p><strong>Approval Rate:</strong> {reportData.totalBNPLApplications > 0 ? ((reportData.approvedApplications / reportData.totalBNPLApplications) * 100).toFixed(1) : 0}%</p>
               <p><strong>Total Collections:</strong> ₨ {reportData.totalCollections.toLocaleString()}</p>
               <p><strong>Pending Payments:</strong> {reportData.pendingPayments}</p>
