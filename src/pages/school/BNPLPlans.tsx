@@ -199,7 +199,7 @@ const BNPLPlans = () => {
         <div>
           <h1 className="text-2xl sm:text-3xl font-bold">BNPL Plans</h1>
           <p className="text-muted-foreground">
-            Manage Buy Now Pay Later applications and payment plans
+            Manage applications and payment plans
           </p>
         </div>
       </div>
@@ -241,7 +241,7 @@ const BNPLPlans = () => {
             <CardContent>
               <div className="text-2xl font-bold">₨ {stats.totalCollections.toLocaleString()}</div>
               <p className="text-xs text-muted-foreground">
-                From BNPL payments
+                From Installment payments
               </p>
             </CardContent>
           </Card>
@@ -387,8 +387,8 @@ const BNPLPlans = () => {
             <CreditCard className="w-12 h-12 mx-auto text-muted-foreground mb-4" />
             <p className="text-muted-foreground">
               {searchTerm || statusFilter !== 'all' 
-                ? 'No BNPL applications found matching filter criteria' 
-                : 'No BNPL applications received yet'}
+                ? 'No applications found matching filter criteria' 
+                : 'No applications received yet'}
             </p>
           </CardContent>
         </Card>
