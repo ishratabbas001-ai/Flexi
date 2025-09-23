@@ -322,10 +322,10 @@ const StudentDetails = () => {
               <CardHeader>
                 <CardTitle className="flex items-center">
                   <CreditCard className="mr-2 h-5 w-5" />
-                  BNPL Plan Details
+                  Payment Plan Details
                 </CardTitle>
                 <CardDescription>
-                  Buy Now Pay Later plan information
+                  Plan information
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-6">
@@ -405,7 +405,7 @@ const StudentDetails = () => {
               {student.bnpl_application && (
                 <Button className="w-full justify-start" variant="outline">
                   <FileText className="mr-2 h-4 w-4" />
-                  View BNPL Application
+                  View Application
                 </Button>
               )}
               
@@ -428,7 +428,7 @@ const StudentDetails = () => {
               </div>
               
               <div className="flex justify-between">
-                <span className="text-sm">BNPL Plan</span>
+                <span className="text-sm">Payment Plan</span>
                 <span className="text-sm font-medium">
                   {student.bnpl_application ? 'Active' : 'None'}
                 </span>
