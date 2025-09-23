@@ -480,7 +480,7 @@ const Schools = () => {
                     <School className="w-4 h-4 text-green-600 mr-1" />
                   </div>
                   <p className="text-2xl font-bold">{school.bnpl_students}</p>
-                  <p className="text-xs text-muted-foreground">BNPL Students</p>
+                  <p className="text-xs text-muted-foreground">Students</p>
                 </div>
               </div>
 
