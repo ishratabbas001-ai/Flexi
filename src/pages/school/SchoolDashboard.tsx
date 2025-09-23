@@ -309,7 +309,7 @@ const SchoolDashboard = () => {
             <CardContent>
               <div className="text-2xl font-bold">₨ {stats.totalCollections.toLocaleString()}</div>
               <p className="text-xs text-muted-foreground">
-                From BNPL payments
+                From payments
               </p>
             </CardContent>
           </Card>
@@ -383,10 +383,10 @@ const SchoolDashboard = () => {
             <CardHeader>
               <CardTitle className="flex items-center">
                 <CreditCard className="mr-2 h-5 w-5" />
-                Recent BNPL Applications
+                Recent Applications
               </CardTitle>
               <CardDescription>
-                Latest Buy Now Pay Later applications
+                Latest applications
               </CardDescription>
             </CardHeader>
             <CardContent>
@@ -493,7 +493,7 @@ const SchoolDashboard = () => {
                 onClick={() => navigate('/school/bnpl-plans')}
               >
                 <CreditCard className="mr-2 h-4 w-4" />
-                BNPL Applications
+                Active Applications
               </Button>
               
               <Button 
@@ -529,7 +529,7 @@ const SchoolDashboard = () => {
                 </div>
                 
                 <div className="flex justify-between">
-                  <span className="text-sm">BNPL Adoption</span>
+                  <span className="text-sm">Active Adoption</span>
                   <span className="text-sm font-medium">
                     {stats.totalStudents > 0 ? ((stats.activeBNPLStudents / stats.totalStudents) * 100).toFixed(1) : 0}%
                   </span>
@@ -544,7 +544,7 @@ const SchoolDashboard = () => {
                 
                 <div className="space-y-2">
                   <div className="flex justify-between text-sm">
-                    <span>BNPL Adoption Rate</span>
+                    <span>FlexiFee Adoption Rate</span>
                     <span>{stats.totalStudents > 0 ? ((stats.activeBNPLStudents / stats.totalStudents) * 100).toFixed(1) : 0}%</span>
                   </div>
                   <Progress 
