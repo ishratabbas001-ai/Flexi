@@ -217,7 +217,7 @@ const Payments = () => {
       <div>
         <h1 className="text-3xl font-bold">Payments</h1>
         <p className="text-muted-foreground">
-          Manage your BNPL payments with flexible payment options
+          Manage your payments with flexible payment options
         </p>
       </div>
 
