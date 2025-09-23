@@ -147,7 +147,7 @@ const Students = () => {
         <div>
           <h1 className="text-2xl sm:text-3xl font-bold">Students Management</h1>
           <p className="text-muted-foreground">
-            Apne school ke students aur unke BNPL plans manage karein
+            Manage Student and Installment Plans.
           </p>
         </div>
         <Button className="w-full sm:w-auto" onClick={() => navigate('/school/add-student')}>
