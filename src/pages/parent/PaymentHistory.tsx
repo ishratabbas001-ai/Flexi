@@ -179,7 +179,7 @@ const PaymentHistory = () => {
         <div>
           <h1 className="text-3xl font-bold">Payment History</h1>
           <p className="text-muted-foreground">
-            Complete record of all your BNPL payments
+            Complete record of all your payments
           </p>
         </div>
         <Button onClick={exportHistory}>
